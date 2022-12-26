@@ -43,7 +43,7 @@ function App() {
 
     return (
         <div>
-            <p>User: <br/> {user ? JSON.stringify(user) : 'None'}</p>
+            {/*<p>User: <br/> {user ? JSON.stringify(user) : 'None'}</p>*/}
             <p>AccessToken: <br/> {accessToken ? accessToken : 'None'}</p>
             {user ? (
                 <button onClick={() => Auth.signOut()}>Sign Out</button>
