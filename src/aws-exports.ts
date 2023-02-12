@@ -32,12 +32,12 @@ const config = {
             redirectSignOut: process.env.REACT_APP_WEB_CLIENT_REDIRECT_URL + "signout",
             responseType: "code", // or 'token', note that REFRESH token will only be generated when the responseType is code
         },
-        cookieStorage: {
-            domain: 'localhost',
-            secure: false,
-            sameSite: 'lax',
-            path: '/',
-        }
+        // cookieStorage: {
+        //     domain: 'localhost',
+        //     secure: false,
+        //     sameSite: 'lax',
+        //     path: '/',
+        // }
     },
 };
 

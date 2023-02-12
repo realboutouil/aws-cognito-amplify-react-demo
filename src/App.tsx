@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {CognitoHostedUIIdentityProvider} from '@aws-amplify/auth';
 import {Amplify, Auth, Hub} from 'aws-amplify';
 import awsconfig from './aws-exports';
 
@@ -48,7 +49,14 @@ function App() {
             {user ? (
                 <button onClick={() => Auth.signOut()}>Sign Out</button>
             ) : (
-                <button onClick={() => Auth.federatedSignIn()}>Federated Sign In</button>
+                <>
+                    <button onClick={() => Auth.federatedSignIn({provider: CognitoHostedUIIdentityProvider.Cognito})}>
+                        Federated Sign In
+                    </button>
+                    <button onClick={() => Auth.federatedSignIn({provider: CognitoHostedUIIdentityProvider.Google})}>
+                        Sign In with google
+                    </button>
+                </>
             )}
         </div>
     );
